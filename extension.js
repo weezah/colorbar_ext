@@ -2,54 +2,29 @@ const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 
-const defaultSettings = {
-	"colors": {
-		"Navy Blue": "#000080",
-		"Indigo Blue": "#3f00ff",
-		"Eden Blue": "#0d5a56",
-		"Teal": "#48aaad",
-		"Torch Red": "#ce173b",
-		"RedWood": "#5a200d",
-		"Sepia": "#700214",
-		"Grape": "#663046",
-		"Bronze Olive": "#42490b",
-		"San Felix": "#1b5506",
-		"Avocado": "#568203",
-		"Dijon": "#c49102",
-		"Wolf": "#504a4b",
-		"Wood": "#3f301d",
-	}
-};
-
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
 
-	// add colors to the settings
 	let colorbarConfig = vscode.workspace.getConfiguration();
-	let currentColors = colorbarConfig.get('colorbar.colors') || {};
-	let newSettings = {...defaultSettings['colors'], ...currentColors};
-	colorbarConfig.update("colorbar", newSettings, vscode.ConfigurationTarget.Global);
-
 	let jsonData = colorbarConfig.get("colorbar.colors")
 	let keys = Object.keys(jsonData);
 
 	function updateColorCustomizations(selection) {
 
-		let configuration = vscode.workspace.getConfiguration();
-
 		let color = jsonData[selection];
 		let colorConfig = {
 			"activityBar.background": color,
-			"activityBar.foreground": pSBC(0.9, color),
+			"activityBar.foreground": pSBC(0.87, color),
 			"activityBar.activeBackground": pSBC(0.13, color),
 			"activityBar.inactiveForeground": pSBC(0.66, color),
-			"titleBar.activeBackground": pSBC(-0.1, color),
+			"titleBar.activeBackground": pSBC(-0.12, color),
 			"statusBar.background": color,
-			"statusBar.foreground": pSBC(0.9, color)
+			"statusBar.foreground": pSBC(0.87, color)
 		};
-
+		
+		let configuration = vscode.workspace.getConfiguration();
 		configuration.update("workbench.colorCustomizations", colorConfig, vscode.ConfigurationTarget.Workspace);
 	}
 
