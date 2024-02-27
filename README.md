@@ -1,5 +1,5 @@
 # ColorBar Extension   
-![Example](./images/icon.png)
+![Example](https://raw.githubusercontent.com/weezah/colorbar_ext/master/images/icon.png)
 
 A small extension that customizes the colors of vscode for every workspace
 
@@ -19,7 +19,7 @@ A small extension that customizes the colors of vscode for every workspace
 1. Choose `ColorBar: Change Color...`
 1. Pick a color and enjoy!
 
-![Example](./images/example.gif)
+![Example](https://raw.githubusercontent.com/weezah/colorbar_ext/master/images/example.gif)
 
 ## Credits
 Thanks to [PimpTrizkit](https://github.com/PimpTrizkit/PJs) for the awesome js color blending tools!
