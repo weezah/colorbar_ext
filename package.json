@@ -1,0 +1,55 @@
+{
+	"name": "colorbar",
+	"description": "Personalize your workbench!",
+	"version": "0.0.1",
+	"publisher": "weezah",
+	"icon" : "./images/icon.png",
+	"repository": "https://github.com/Microsoft/vscode-extension-samples/colorbar",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"activationEvents": [],
+	"main": "./extension.js",
+	"contributes": {
+		"configuration" : {
+			"type" : "object",
+			"title" : "ColorBar Configurations",
+			"properties": {
+				"colorbar.colors": {
+					"type": "object",
+					"default": {
+						"Navy Blue": "#000080",
+						"Indigo Blue": "#3f00ff",
+						"Eden Blue": "#0d5a56",
+						"Teal": "#48aaad",
+						"Torch Red": "#ce173b",
+						"RedWood": "#5a200d",
+						"Sepia": "#700214",
+						"Grape": "#663046",
+						"Bronze Olive": "#42490b",
+						"San Felix": "#1b5506",
+						"Avocado": "#568203",
+						"Dijon": "#c49102",
+						"Wolf": "#504a4b",
+						"Wood": "#3f301d"
+					},
+					"description": "Default colors"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "colorbar.pick",
+				"title": "ColorBar: Change Color..."
+			},
+			{
+				"command": "colorbar.edit",
+				"title": "ColorBar: Edit colors..."
+			}
+		]
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.73.0"
+	}
+}
